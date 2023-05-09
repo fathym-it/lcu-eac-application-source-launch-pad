@@ -1,0 +1,44 @@
+{
+  "PROJECT_LOOKUP": {
+    "Order": 1,
+    "Prompts": [
+      {
+        "Type": "eac:projects|select",
+        "Message": "Choose the project to deploy the package to?",
+        "Arguments": {
+          "CreateText": "Create a project"
+        }
+      }
+    ]
+  },
+  "ORGANIZATION": {
+    "Order": 2,
+    "Prompts": [
+      {
+        "Type": "git:organizations|select",
+        "Message": "Enter the Organization name:"
+      }
+    ]
+  },
+  "REPOSITORY": {
+    "Order": 2,
+    "Prompts": [
+      {
+        "Type": "git:repositories|select",
+        "Message": "Enter the name of the repository:",
+        "Arguments": {
+          "ORGANIZATION": "Organization",
+          "CreateText": "Create a repository"
+        }
+      }
+    ]
+  },
+  "PACKAGE_ROUTE": {
+    "Order": 2,
+    "Prompts": [
+      {
+        "Message": "Enter the route to run the application on:"
+      }
+    ]
+  }
+}

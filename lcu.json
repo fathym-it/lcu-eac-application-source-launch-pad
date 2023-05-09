@@ -1,0 +1,21 @@
+{
+  "Package": {
+    "Name": "Application Source View - Launch Pad",
+    "Description": "An LCU for managing applications that use source control as the deployment package. Will ensure the source is configured and prepared with a build for the chosen application type.",
+    "Image": "https://www.fathym.com/assets/images/logo.png",
+    "PreviewImage": "https://www.fathym.com/assets/images/logo.png"
+  },
+  "Configurations": {
+    "React": {
+      "Name": "React GitHub Package Deploy",
+      "Description": "A simple React GitHub package deployment deployment.",
+      "Phases": [
+        {
+          "Name": "Install React GitHub Package",
+          "Order": 1,
+          "Asset": "install"
+        }
+      ]
+    }
+  }
+}

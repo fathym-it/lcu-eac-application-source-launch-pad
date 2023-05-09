@@ -1,0 +1,77 @@
+{
+  "Applications": {
+    "{{$1}}": {
+      "Details": {
+        "Description": "A basic starting point for sites built with React.",
+        "Name": "React starter without code."
+      },
+      "LookupConfig": {
+        "PathRegex": "/{{PACKAGE_ROUTE}}.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/{{REPOSITORY}}",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/{{PACKAGE_ROUTE}}/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    }
+  },
+  "Environments": {
+    "{{EaC.PrimaryEnvironment}}": {
+      "Artifacts": {
+        "react-build-release": {
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "React Build/Release",
+            "Output": "./build",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm ci",
+            "NPMRegistry": "https://registry.npmjs.org/"
+          }
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-react": {
+          "ArtifactLookups": ["react-build-release"],
+          "Details": {
+            "Name": "GitHub Artifacts - Release - React",
+            "Path": "lcu-github-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+            ]
+          }
+        }
+      },
+      "Sources": {
+        "configure|github://{{ORGANIZATION}}/{{REPOSITORY}}": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-react"],
+          "Details": {
+            "Branches": ["main", "integration", "feature/**", "hotfix/**"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "{{REPOSITORY}}",
+            "Name": "github://{{ORGANIZATION}}/{{REPOSITORY}}"
+          },
+          "Type": "GitHubSourceControl"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "{{PROJECT_LOOKUP}}": {
+      "ApplicationLookups": [
+        "{{$1}}"
+      ]
+    }
+  }
+}

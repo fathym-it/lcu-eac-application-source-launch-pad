@@ -57,7 +57,7 @@
           "DevOpsActionTriggerLookups": ["github-artifacts-release-react"],
           "Details": {
             "Branches": ["main", "integration", "feature/**", "hotfix/**"],
-            "MainBranch": "main",
+            "MainBranch": "integration",
             "Organization": "{{ORGANIZATION}}",
             "Repository": "{{REPOSITORY}}",
             "Name": "github://{{ORGANIZATION}}/{{REPOSITORY}}"

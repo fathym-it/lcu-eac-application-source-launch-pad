@@ -69,6 +69,10 @@
   },
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
+      "Details": {
+        "Name": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{/if}}{{else}}Starter Repository Without Code{{/if}}",
+        "Description": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{/if}}{{else}}A basic GitHub repository without code configured with source control and build pipeline.{{/if}}"
+      },
       "ApplicationLookups": [
         "{{$1}}"
       ]

@@ -2,30 +2,8 @@
   "Package": {
     "Name": "Create and Deploy New Repository ",
     "Description": "Set up a basic GitHub repository without code and deploy it (with configured source control and build pipeline).",
-    "Image": "https://www.fathym.com/assets/images/logo.png",
-    "PreviewImage": "https://www.fathym.com/assets/images/logo.png",
-    "Intents": [
-      "React",
-      "Vue",
-      "Svelte",
-      "Angular",
-      "Getting started",
-      "Website",
-      "Composable Applications",
-      "Application"
-    ]
-  },
-  "Configurations": {
-    "React": {
-      "Name": "Create and Deploy New Repository",
-      "Description": "Set up a basic GitHub repository without code and deploy it (with configured source control and build pipeline).",
-      "Phases": [
-        {
-          "Name": "Installing React GitHub Package",
-          "Order": 1,
-          "Asset": "install"
-        }
-      ]
-    }
+    "Image": "https://www.fathym.com/img/react.png",
+    "PreviewImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+    "UsesGit": true
   }
 }

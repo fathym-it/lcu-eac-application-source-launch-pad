@@ -1,2 +1,6 @@
 {
+    "PACKAGE_ROUTE": {
+      "type": "input",
+      "message": "Enter your Package Route:"
+  }
 }

@@ -9,7 +9,7 @@
         "PathRegex": "/{{PACKAGE_ROUTE}}.*"
       },
       "LowCodeUnit": {
-        "SourceControlLookup": "fork|github://fathym-it/public-web-react",
+        "SourceControlLookup": "github://{{ORGANIZATION}}/{{REPOSITORY}}",
         "Build": "latest",
         "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"

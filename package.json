@@ -1,6 +1,6 @@
 {
   "name": "@fathym-it/lcu-eac-application-source-launch-pad",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "@fathym-it/lcu-eac-application-source-launch-pad",
   "author": "Fathym, Inc",
   "main": "lcu.json",
